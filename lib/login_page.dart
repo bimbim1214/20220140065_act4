@@ -21,3 +21,44 @@ class _LoginPageState extends State<LoginPage> {
     super.initState();
   }
 
+
+@override
+Widget build(BuildContext context){
+  final _fromKey = GlobalKey<FormState>();
+  return Scaffold(
+    body: Form(
+      key: _fromKey,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextFormField(
+              controller: emailController,
+              decoration: const InputDecoration(labelText: 'Email'),
+              validator: (value) {
+                if (value == null || value.isEmpty){
+                  return 'Please enter your email';
+                }
+                return null;
+              },
+            ),
+            TextFormField(
+              controller: passwordController,
+              decoration: const InputDecoration(labelText: 'Password'),
+              obscureText: true,
+              validator: (value) {
+                if (value == null || value.isEmpty){
+                  return 'Please enter your password';
+                }
+                return null;
+              },
+            ),
+            
+          ],
+        ),
+      ),
+    ),
+  );
+}
+}
