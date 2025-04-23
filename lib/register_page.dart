@@ -11,4 +11,10 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  @override
+  void initState(){
+    super.initState();
+  }
+
   
+}
