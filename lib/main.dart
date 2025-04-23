@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pertemuan4/login_page.dart';
+import 'package:pertemuan4/home_page.dart';
+import 'package:pertemuan4/order_page.dart';
+// import 'package:play_navigation/presentation/home_page.dart';
+// import 'package:play_navidation/presentation/login_page.dart';
+// import 'package:play_navigation/presentation/order_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,7 +13,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +21,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/home' : (context) => const HomePage(),
+        '/order' : (context) => const OrderPage(),
+      },
     );
   }
 }
